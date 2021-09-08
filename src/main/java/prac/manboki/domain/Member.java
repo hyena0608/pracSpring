@@ -4,10 +4,9 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
+
+import static javax.persistence.FetchType.*;
 
 @Entity
 @Getter
@@ -20,6 +19,10 @@ public class Member {
     private String password;
 
     private String name;
+
+    @OneToOne(fetch = LAZY)
+    @JoinColumn(name = "pedometer_id")
+    private Pedometer pedometer;
 
     public Member() {
     }

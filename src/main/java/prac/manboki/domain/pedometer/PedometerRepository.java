@@ -1,8 +1,7 @@
-package prac.manboki.repository;
+package prac.manboki.domain.pedometer;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
-import prac.manboki.domain.Pedometer;
 
 import javax.persistence.EntityManager;
 

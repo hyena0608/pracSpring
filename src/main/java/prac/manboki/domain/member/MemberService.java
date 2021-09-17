@@ -1,12 +1,13 @@
-package prac.manboki.service;
+package prac.manboki.domain.member;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import prac.manboki.domain.Member;
-import prac.manboki.repository.MemberRepository;
+import prac.manboki.domain.member.Member;
+import prac.manboki.domain.member.MemberRepository;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @Transactional(readOnly = true)
@@ -33,7 +34,13 @@ public class MemberService {
     }
 
     public Member findOne(Long memberId) {
-        return memberRepository.findOne(memberId);
+        return memberRepository.findById(memberId);
+    }
+
+    public Optional<Member> findByLoginId(String loginId) {
+        return memberRepository.findAll().stream()
+                .filter(m -> m.getLoginId().equals(loginId))
+                .findFirst();
     }
 
     public List<Member> findMembers() {

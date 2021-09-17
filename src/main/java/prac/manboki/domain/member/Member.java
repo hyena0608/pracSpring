@@ -1,24 +1,30 @@
-package prac.manboki.domain;
+package prac.manboki.domain.member;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
-import lombok.RequiredArgsConstructor;
+import prac.manboki.domain.pedometer.Pedometer;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotEmpty;
 
 import static javax.persistence.FetchType.*;
 
 @Entity
 @Getter
+@AllArgsConstructor
 public class Member {
 
     @Id @GeneratedValue
     @Column(name = "member_id")
     private Long id;
 
-    private String password;
-
+    @NotEmpty
+    private String loginId;
+    @NotEmpty
     private String name;
+    @NotEmpty
+    private String password;
+    private String email;
 
     @OneToOne(fetch = LAZY)
     @JoinColumn(name = "pedometer_id")
@@ -27,8 +33,9 @@ public class Member {
     public Member() {
     }
 
-    public Member(String password, String name) {
+    public Member(String password, String name, String email) {
         this.password = password;
         this.name = name;
+        this.email = email;
     }
 }

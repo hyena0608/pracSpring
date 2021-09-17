@@ -1,7 +1,7 @@
-package prac.manboki.domain;
+package prac.manboki.domain.pedometer;
 
 import lombok.Getter;
-import lombok.Setter;
+import prac.manboki.domain.member.Member;
 
 import javax.persistence.*;
 

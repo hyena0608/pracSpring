@@ -1,8 +1,8 @@
-package prac.manboki.repository;
+package prac.manboki.domain.member;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
-import prac.manboki.domain.Member;
+import prac.manboki.domain.member.Member;
 
 import javax.persistence.EntityManager;
 import java.util.List;
@@ -17,7 +17,7 @@ public class MemberRepository {
         em.persist(member);
     }
 
-    public Member findOne(Long id) {
+    public Member findById(Long id) {
         return em.find(Member.class, id);
     }
 
@@ -31,4 +31,9 @@ public class MemberRepository {
         return em.createQuery("select m from Member m", Member.class)
                 .getResultList();
     }
+
+    public Member findById(String loginId) {
+        return em.find(Member.class, loginId);
+    }
+
 }

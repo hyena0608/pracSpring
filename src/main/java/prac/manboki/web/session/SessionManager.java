@@ -10,6 +10,10 @@ import java.util.Map;
 import java.util.UUID;
 import java.util.concurrent.ConcurrentHashMap;
 
+/**
+ * 직접 만든 세션 (사용 X)
+ */
+
 @Component
 public class SessionManager {
 

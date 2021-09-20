@@ -14,8 +14,8 @@ public class LoginService {
     /**
      * @return null이면 로그인 실패
      */
-    public Member login(String loginId, String password) {
-       return memberService.findByLoginId(loginId)
+    public Member login(String email, String password) {
+       return memberService.findByEmail(email)
                .filter(m -> m.getPassword().equals(password))
                .orElse(null);
     }

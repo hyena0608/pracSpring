@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class PageController {
 
-    @GetMapping("/")
+//    @GetMapping("/")
     public String loginForm() {
         return "members/loginForm";
     }

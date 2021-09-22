@@ -1,27 +1,14 @@
 package prac.manboki.web.member;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.JsonMappingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.http.HttpEntity;
-import org.springframework.http.HttpHeaders;
-import org.springframework.http.HttpMethod;
-import org.springframework.http.ResponseEntity;
-import org.springframework.util.LinkedMultiValueMap;
-import org.springframework.util.MultiValueMap;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.client.RestTemplate;
-import prac.manboki.controller.KakaoProfile;
-import prac.manboki.controller.OAuthToken;
 import prac.manboki.domain.member.Member;
 import prac.manboki.domain.member.MemberService;
 
 import javax.validation.Valid;
-import java.util.UUID;
 
 @RestController
 @Slf4j
@@ -29,9 +16,6 @@ import java.util.UUID;
 public class MemberController {
 
     private final MemberService memberService;
-
-
-
 
     @GetMapping("/add")
     public String addForm(@ModelAttribute("member") Member member) {

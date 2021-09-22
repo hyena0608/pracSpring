@@ -11,15 +11,12 @@ import static javax.persistence.FetchType.*;
 
 @Entity
 @Getter
-@AllArgsConstructor
 public class Member {
 
     @Id @GeneratedValue
     @Column(name = "member_id")
     private Long id;
 
-//    @NotEmpty
-//    private String loginId;
     @NotEmpty
     private String name;
     @NotEmpty

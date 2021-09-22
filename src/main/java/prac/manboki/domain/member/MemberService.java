@@ -33,17 +33,10 @@ public class MemberService {
         }
     }
 
-    public Member findOne(Long memberId) {
-        return memberRepository.findById(memberId);
-    }
-
     public Optional<Member> findByEmail(String email) {
         return memberRepository.findAll().stream()
                 .filter(m -> m.getEmail().equals(email))
                 .findFirst();
     }
 
-    public List<Member> findMembers() {
-        return memberRepository.findAll();
-    }
 }

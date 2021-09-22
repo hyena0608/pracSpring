@@ -1,5 +1,6 @@
 package prac.manboki.domain.pedometer;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import prac.manboki.domain.member.Member;
 
@@ -24,4 +25,12 @@ public class Pedometer {
     @Column(name = "total_steps")
     private int totalSteps;
 
+    public Pedometer() {
+    }
+
+    public Pedometer(Member member, int todaySteps, int totalSteps) {
+        this.member = member;
+        this.todaySteps = todaySteps;
+        this.totalSteps = totalSteps;
+    }
 }

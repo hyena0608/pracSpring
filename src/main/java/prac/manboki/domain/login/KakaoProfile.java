@@ -1,4 +1,4 @@
-package prac.manboki.controller;
+package prac.manboki.domain.login;
 
 import lombok.Data;
 

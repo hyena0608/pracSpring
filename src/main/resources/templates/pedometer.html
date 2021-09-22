@@ -1,0 +1,15 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <title>만보기</title>
+</head>
+<body>
+    <h1>이름</h1>
+        <p th:text="|이름: ${member.name}|">출력 안됨</p>
+        <p th:text="|이메일: ${member.email}|">출력 안됨</p>
+        <p th:text="|만보기: ${member.pedometer}|">출력 안됨</p>
+        <p th:text="|만보기: ${member.todaySteps}|">출력 안됨</p>
+    <h1>끝</h1>
+</body>
+</html>

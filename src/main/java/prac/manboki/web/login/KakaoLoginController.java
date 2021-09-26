@@ -37,7 +37,7 @@ public class KakaoLoginController {
         // 2번 인증코드로 토큰 전달
         HashMap<String, Object> userInfo = kakaoLoginApi.getUserInfo(accessToken, request);
         UUID garbagePassword = UUID.randomUUID();
-        Member loginMember = loginService.autoJoin(
+        Member loginMember = loginService.autoLoginWithJoin(
                 garbagePassword + "",
                 userInfo.get("nickname") + "",
                 userInfo.get("email") + ""

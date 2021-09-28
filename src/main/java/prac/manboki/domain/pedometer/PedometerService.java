@@ -30,4 +30,12 @@ public class PedometerService {
                 .findFirst();
     }
 
+    @Transactional
+    public void updatePedomemter(String email, int todaySteps) {
+        Pedometer findPedometer = pedometerRepository.findByEmail(email);
+        Long findPedometerId = findPedometer.getId();
+        int totalSteps = pedometerRepository.findTotalStepsById(findPedometerId);
+        findPedometer.setSteps(todaySteps, totalSteps + todaySteps);
+    }
+
 }

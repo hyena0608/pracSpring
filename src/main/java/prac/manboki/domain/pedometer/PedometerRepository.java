@@ -22,10 +22,6 @@ public class PedometerRepository {
         return em.find(Pedometer.class, id);
     }
 
-//    public Optional<Pedometer> findByMember(String memberId) {
-//
-//    }
-
     public List<Pedometer> findAll() {
         return em.createQuery("select p from Pedometer p", Pedometer.class)
                 .getResultList();
@@ -36,5 +32,11 @@ public class PedometerRepository {
                 " where m.email = :email", Pedometer.class)
                 .setParameter("email", email)
                 .getSingleResult();
+    }
+
+    public int findTotalStepsById(Long id) {
+        return em.createQuery("select p.totalSteps from Pedometer p where p.id = :id", Pedometer.class)
+                .getSingleResult()
+                .getTotalSteps();
     }
 }

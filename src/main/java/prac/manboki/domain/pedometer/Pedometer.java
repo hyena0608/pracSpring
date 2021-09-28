@@ -33,4 +33,17 @@ public class Pedometer {
         this.todaySteps = todaySteps;
         this.totalSteps = totalSteps;
     }
+
+    private void setTodaySteps(int todaySteps) {
+        this.todaySteps = todaySteps;
+    }
+
+    private void setTotalSteps(int totalSteps) {
+        this.totalSteps = totalSteps;
+    }
+
+    public void setSteps(int todaySteps, int totalSteps) {
+        this.todaySteps = todaySteps;
+        this.totalSteps = totalSteps;
+    }
 }
